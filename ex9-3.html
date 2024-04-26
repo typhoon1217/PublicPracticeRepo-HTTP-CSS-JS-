@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //해당되는 객체참조변수를 선언
+        let p  =null, h1=null, hr=null;
+        function init(){
+             //객체 참조 저장
+            p = document.querySelector("#p");
+            h1 = document.querySelector("#h1");
+            hr = document.querySelector("#hr");
+            //이벤트 등록
+            p.addEventListener("mouseover", ()=>   p.style.backgroundColor = `orchid`);
+            p.addEventListener("mouseout", ()=>   p.style.backgroundColor = `white`);
+     }
+    </script>
+</head>
+<body onload="init()">
+    <h1 id="h1">
+        addEventListener()이용한 리스너 등록  
+    </h1>
+    <hr id="hr">
+    <p id="p">마우스를 올리면 orchid색으로 변경</p>
+
+</body>
+</html>

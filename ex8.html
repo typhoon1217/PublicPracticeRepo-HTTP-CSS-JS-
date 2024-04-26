@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(){
+        const spanArray = document.getElementsByTagName('span');
+      for (let i = 0; i < spanArray.length; i++) {
+        spanArray[i].style.color = "blue";
+        spanArray[i].style.fontSize = "20px";
+        spanArray[i].style.color = "blue";
+        }
+
+}
+
+    
+    </script>
+</head>
+<body >
+    <h1 style="display: inline-block">과일</h1>
+    <button onclick="change()">눌러</button>
+    <hr>
+    <p>
+        Lorem ipsum dolor, sit amet <span>consectetur</span>consectetur adipisicing elit. 
+        Aliquam quis exercitationem <span>laudantium</span>laudantium perspiciatis numquam? 
+        Iure deserunt <span>temporibus</span>temporibus non odit quidem.
+
+    </p>
+</body>
+</html>

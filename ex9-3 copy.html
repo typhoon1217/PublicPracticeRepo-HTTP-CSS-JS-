@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let p, h1, hr;
+      function init() {
+        h1 = document.getElementById("h1");
+        hr = document.getElementById("hr");
+        p = document.getElementById("p");
+        //이벤트 리스너
+        p.addEventListener("mouseover", () => 
+          p.style.backgroundColor = `orchid`
+        );
+        p.addEventListener("mouseout", () => 
+          p.style.backgroundColor = `black`
+        );
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <h1 id="h1">test</h1>
+    <hr id="hr" />
+    <p id="p">asdasdasd</p>
+  </body>
+</html>

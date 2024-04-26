@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding:0;
+        align-content: center;
+        
+    }
+    header1{
+        background-color: white;
+        width: 100%;
+        height: 50px;
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+    }
+    header2{
+        background-color: blue;
+        width: 80%;
+        height: 100px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        
+    }
+    section{
+        width: 80%;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        margin: 0 auto;
+        padding: 0px auto;
+
+    }form{
+        margin: 0 auto;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    td{
+        border-top: 1px solid  gray;
+        border-bottom: 1px solid  gray;
+        border-left: 1px solid  gray;
+
+    }
+    td.title{
+        width: 20%;
+        background-color: lightgray;
+        padding-left: 5px;
+        border-left: solid white;
+    }
+    td.content{
+        width: 80%;
+        padding: 5px 5px 10px 5px;
+    }
+    td.content1{
+        width:60%;
+        
+    }
+    td.content2{
+        width:20%;
+        
+    }
+    td > span{
+        font-size: 8px;
+
+    }
+    input{
+        border: 1px solid lightgray;
+        margin: 8px;
+        height: 27px;
+        border-radius: 2px;
+
+    }input.request{
+        background-color: rgb(240, 240, 240);
+        background-image: url(/PubData/ch3/wrest.gif);
+        background-repeat: no-repeat;
+        background-position: top right;
+
+    }input.request1{
+        background-color: rgb(240, 240, 240);
+        background-repeat: no-repeat;
+        background-position: top right;
+
+    }input.submit{
+        background-color: black;
+        color: white;
+    }
+    tr>td>label{
+        font-size: small;
+        padding: auto;
+    }
+    span.warning{
+        color: red;
+        font-size: smaller;
+    }
+    footer{
+        background-color: white;
+        width: 100%;
+        height: 500px;
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 100px;
+        margin: 10px;
+    }
+    footer>button{
+        width:70px;
+        height: 40px;
+        margin: 7px;
+        
+    }
+    button.login{
+        background-color: #ec5af4;
+        border: 1px solid #ec5af4;
+        color: white;
+
+    }td.content>img{
+        width: 140px;
+        border: 1px solid black;
+        vertical-align:middle;
+    }
+        
+
+
+</style>
+<script>
+    function checkId() {
+        const memberId = document.getElementById('memberId').value;
+          
+        // Check length
+        if (memberId.length < 3) {
+        alert('아이디는 3자 이상이어야 합니다.');
+        return false;
+          }
+        
+          // Check format
+        const regex = /^[a-zA-Z0-9_]+$/;
+            if (!regex.test(memberId)) {
+            alert('아이디는 영문자, 숫자, _ 만 사용 가능합니다.');
+            return false;
+                }
+        
+          // If valid
+          alert('사용 가능한 아이디입니다.');
+          return true;
+        }
+        
+    
+</script>
+<body>
+    <header1>
+        <p>2020.1.30</p>
+        <p>회원가입</p>
+        <p></p>
+    </header1>
+    <header2>
+        <h1>회원가입</h1>
+    </header2>
+    <section>
+        <h4>사이트 입력정보 입력</h4>
+        <table>
+            <tr>
+                <td class="title"><label for="memberId">아이디</label></td>
+                <td class="content">
+                    <span>영문자, 숫자_만 입력가능, 최소3자이상 입력하세요<br> </span>
+                    <input class="request" type="text" name="memberId" id="memberId">
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="memberPW">비밀번호</label></td>
+                <td class="content">
+                    <span>영문자, 숫자_만 입력가능, 최소3자이상 입력하세요<br> </span>
+                    <input class="request" type="text" name="memberPW" id="memberPW">
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="verifyPW">비밀번호 확인</label></td>
+                <td class="content">
+                    <input class="request" type="text" name="verifyPW" id="verifyPW">
+                </td>
+            </tr>
+        </table>
+        <h4>개인정보 입력</h4>
+        <table>
+            <tr>
+                <td class="title"><label for="name">이름</label></td>
+                <td class="content">
+                    <input class="request" type="text" name="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="nickname">닉네임</label></td>
+                <td class="content">
+                    <span>공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상) <br> 닉네임을 바꾸시면 앞으로 1일 이내에는 변경할 수 없습니다.<br></span>
+                    <input class="request" type="text" name="memberId" id="memberId">
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="E-mail">E-mail</label></td>
+                <td class="content">
+                   <input class="request" type="text" name="E-mail" id="E-mail" style="width: 500px;">
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="howJoin">가입경로</label></td>
+                <td class="content">
+                     <input type="radio" name="google" id="google">
+                     <label for="google">인터넷검색</label>
+                     <input type="radio" name="ad" id="ad">
+                     <label for="ad">배너광고</label>
+                     <input type="radio" name="article" id="article">
+                     <label for="article">관련기사를보고</label>
+                     <input type="radio" name="homepage" id="homepage">
+                     <label for="homepage">미라지홈페이지보고</label>
+                     <input type="radio" name="friend" id="friend">
+                     <label for="friend">주변사람소개</label>
+                     <input type="radio" name="extra" id="extra">
+                     <label for="extra">기타</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="hphone">전화번호</label></td>
+                <td class="content">
+                   <input class="request" type="text" name="hphone" id="hphone"?>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="mphone">휴대폰번호</label></td>
+                <td class="content">
+                   <input class="request" type="text" name="mphone" id="mphone"?>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="birth">생년월일</label></td>
+                <td class="content">
+                   <input class="request" type="date" name="birth" id="birth"?>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="address">주소</label></td>
+                <td class="content1">
+                   <input class="request" type="text" name="address" id="address"?>
+                   <input class= "submit" type="submit" value="주소 검색">
+                   <input class="request" type="text" name="address" id="address" style="width: 80%";>
+                   <label class="request2" for="address">기본주소</label>
+                   <input class="request1" type="text" name="address" id="address" style="width:80%";>
+                   <label class="request2" for="address">상세주소</label>
+                   <input class="request1" type="text" name="address" id="address" style="width:80%";>
+                   <label class="request2" for="address">참고항목</label>
+                </td>
+            </tr>
+        </table>
+        <h4>기타 개인설정</h4>
+        <table>
+            <tr>
+                <td class="title"><label for="address">카카오톡 메세<br>지</label></td>
+                <td class="content1">
+                    <input type="checkbox" name="kakao" id="kakao" checked>
+                    <label for="kakao">카카오톡 메세지를 받겠습니다.
+                    <span class="warning">&#60;수신체크를 하시면 세일 소식을 가장 먼저 받아보실 수 있습니다.</span>
+                </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="address">SMS 수신여부</label></td>
+                <td class="content">
+                    <input type="checkbox" name="infor" id="infor" checked>
+                    <label for="infor">정보 메일을 받겠습니다.
+                </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="address">정보공개</label></td>
+                <td class="content">
+                    <p style="font-size:xx-small">정보 공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다.</p>
+                    <input type="checkbox" name="infor" id="infor" checked>
+                    <label for="infor">다른분들이 나의 정보를 볼 수 있도록 합니다.
+                </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="title"><label for="address">자동등록방지</label></td>
+                <td class="content">
+                    
+                    <img src="스크린샷 2024-04-19 170650.png" alt="자동입력방지">
+                    <input type="submit" value="코드 생성"> 
+                    <input class="request" type="text" name="address" id="address" ;>
+                    <input type="submit" value="비교"> 
+                    <br>
+                    <span>자동등록방지 문자와 숫자를 순서대로 입력해 주세요</span>
+                    
+                </label>
+                </td>
+            </tr>
+        </table>
+        <footer>
+            <button class="login">회원가입</button>
+            <button>취소</button>
+        </footer>
+    </section>
+</body>
+</html>
